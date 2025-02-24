@@ -64,18 +64,17 @@ const images = [
   },
 ];
 
-
-
-
 const galleryEl = document.querySelector(".gallery");
 const galleryMarkupEl = images
    .map((image) => `<li class="gallery-item"><a class="gallery-link" href="${image.original}"><img class="gallery-image" src="${image.preview}" data-source="${image.original}" alt="${image.description}"/></a></li>`)
    .join("");
 galleryEl.insertAdjacentHTML("afterbegin", galleryMarkupEl);
 
+galleryEl.addEventListener("click", showPic);
 
-galleryEl.addEventListener("click",showPic);
-
+galleryEl.addEventListener("click", (event) => {
+  event.preventDefault();
+});
 
 function showPic(event) {
    if (event.target.nodeName === "IMG") {
