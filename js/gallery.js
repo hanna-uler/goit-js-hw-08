@@ -79,7 +79,6 @@ galleryEl.addEventListener("click",showPic);
 
 function showPic(event) {
    if (event.target.nodeName === "IMG") {
-       console.log(event.target.dataset.source);
        const fullImage = event.target.getAttribute('data-source');
        const instance = basicLightbox.create(`<img src="${fullImage}" width="800">`);
        instance.show();
