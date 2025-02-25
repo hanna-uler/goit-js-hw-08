@@ -72,14 +72,14 @@ galleryEl.insertAdjacentHTML("afterbegin", galleryMarkupEl);
 
 galleryEl.addEventListener("click", showPic);
 
-galleryEl.addEventListener("click", (event) => {
+galleryEl.addEventListener("click", event => {
   event.preventDefault();
 });
 
 function showPic(event) {
    if (event.target.nodeName === "IMG") {
        const fullImage = event.target.getAttribute('data-source');
-       const instance = basicLightbox.create(`<img src="${fullImage}" width="800">`);
+       const instance = basicLightbox.create(`<img src="${fullImage}" width="1112" height="640">`);
        instance.show();
    }
 };
